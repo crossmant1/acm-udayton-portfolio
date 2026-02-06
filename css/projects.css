@@ -1,0 +1,63 @@
+/* Projects Section Styles */
+section.projects {
+    width: 70% !important;
+    margin: 40px auto !important;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+}
+
+/* Project Card Styles */
+.project {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+.project:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+.project h2 {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    color: #333;
+}
+.project p {
+    color: #444;
+    line-height: 1.6;
+    margin: 0 0 15px 0;
+}
+.project h3 {
+    margin: 0;
+}
+
+/* GitHub Projects Section Styles */
+.projects-github {
+    text-align: center;
+    margin: 40px 0;
+}
+.projects-github h2 {
+    margin-top: 0px;
+}
+.projects-github p {
+    width: 60%;
+    margin: 20px auto;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Projects Divider */
+hr.projects-divider {
+    background: var(--accent-color-bg);
+}
+@media (max-width: 600px) {
+    /* Projects Section */
+    section.projects {
+        grid-template-columns: 1fr;
+    }
+}
