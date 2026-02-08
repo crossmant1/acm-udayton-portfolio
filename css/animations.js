@@ -44,6 +44,19 @@ document.addEventListener('DOMContentLoaded', function() {
     }, 50);
 });
 
+function showhide(){
+    var shown = false;
+    if(shown){
+        document.getElementById('email').innerHTML = "show my email";
+        shown = false;
+    } else{
+    var myemail = "<a href='mailto:23crossmant"+ "@"+ "gmail.com'>23crossmant" + "@" + "gmail.com</a>";
+    document.getElementById('email').innerHTML = myemail;
+    shown = true;
+    }
+}
+
+
 // Add smooth scroll behavior
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {

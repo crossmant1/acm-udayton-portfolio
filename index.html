@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/home.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -16,35 +18,64 @@
         <div class="sidebar-content">
             <div class="profile-section">
                 <div class="profile-image">
-                    <div class="profile-placeholder"></div>
+                    <img src="img/profile_picture.JPG" style="width:100%; border-radius: 40px;" alt="Avatar">
                 </div>
-                <h2 class="profile-name">Your Name</h2>
-                <p class="profile-title">Full Stack Developer</p>
+                <h2 class="profile-name">Thomas Crossman</h2>
+                <p class="profile-title">Third Year Computer Science Student at the University of Dayton</p>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <a href="index.html" class="sidebar-link active">
-                    <span class="link-icon">🏠</span>
                     <span>Home</span>
                 </a>
                 <a href="pages/projects.html" class="sidebar-link">
-                    <span class="link-icon">💼</span>
                     <span>Projects</span>
                 </a>
             </nav>
-            
+            <!--Project requriements-->
+            <div id="digit-clock"></div>
+                <script>
+                    function displayTime() {
+                        document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+                    }
+                    setInterval(displayTime, 500);
+                </script>
+            <div id="main">
+                <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+                
+                <script>
+                    var canvas = document.getElementById("analog-clock");
+                    var ctx = canvas.getContext("2d");
+                    var radius = canvas.height / 2;
+                    ctx.translate(radius, radius);
+                    radius = radius * 0.90;
+                    setInterval(drawClock, 1000);
+
+                    function drawClock() {
+                        if(typeof drawFace === "function") {
+                            drawFace(ctx, radius);
+                            drawNumbers(ctx, radius);
+                            drawTime(ctx, radius);
+                        } else {
+                            console.log("Clock functions not loaded.");
+                        }
+                    }
+                </script>
+            <!--End Project requirements-->
             <div class="sidebar-contact">
-                <a href="mailto:your.email@example.com" class="contact-link">
-                    <span class="link-icon">📧</span>
-                    <span>your.email@example.com</span>
+                <a onclick="showhide()">
+                    <i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-white"></i>
+                    <span id="email" style="cursor: pointer;">Show My Email</span>
                 </a>
-                <a href="https://github.com/yourusername" target="_blank" class="contact-link">
-                    <span class="link-icon">💻</span>
-                    <span>GitHub</span>
+                <br>
+                <a href="https://github.com/crossmant1" target="_blank" style="text-decoration: none;">
+                    <i class="fa fa-github w3-hover-opacity" style="font-size: 25px !important; margin-right: 20px;"></i>
+                    <span>Github</span>
                 </a>
-                <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-link">
-                    <span class="link-icon">💼</span>
-                    <span>LinkedIn</span>
+                <br>
+                <a href="https://www.linkedin.com/in/thomas-crossman004" target="_blank" style="text-decoration: none;">
+                    <i class="fa fa-linkedin w3-hover-opacity" style="font-size: 25px !important; margin-right: 20px;"></i>
+                    <span>Linkedin</span>
                 </a>
             </div>
         </div>
@@ -60,7 +91,7 @@
 
         <!-- Work Experience Section -->
         <section class="experience-section">
-            <h2 class="section-title">Work Experience</h2>
+            <h2 class="section-title">Experience</h2>
             
             <div class="experience-list">
                 <!-- Experience Item 1 -->
@@ -72,21 +103,20 @@
                     <div class="experience-content">
                         <div class="experience-header">
                             <div class="experience-title-group">
-                                <h3 class="experience-title">Senior Product Designer</h3>
-                                <p class="experience-company">Tech Innovations Inc.</p>
+                                <h3 class="experience-title">AI Solutions Associate</h3>
+                                <p class="experience-company">University of Dayton</p>
                             </div>
-                            <span class="experience-date">2022 - Present</span>
+                            <span class="experience-date">August 2025 - Present</span>
                         </div>
                         <ul class="experience-description">
-                            <li>Led design initiatives for flagship product, increasing user engagement by 45%</li>
-                            <li>Managed cross-functional team of 8 designers and developers</li>
-                            <li>Established design system used across 12+ product teams</li>
-                            <li>Conducted user research and usability testing with 200+ participants</li>
+                            <li>Developed MCP server to connect the Google Workspace to the University's AI</li>
+                            <li>Researched University Approved AI and documented use cases</li>
+                            <li>Developed specialized Agents to help with everyday tasks</li>
                         </ul>
                         <div class="experience-tags">
-                            <span class="tag">UI/UX Design</span>
-                            <span class="tag">Team Leadership</span>
-                            <span class="tag">Design Systems</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Azure</span>
                         </div>
                     </div>
                 </article>
@@ -100,21 +130,20 @@
                     <div class="experience-content">
                         <div class="experience-header">
                             <div class="experience-title-group">
-                                <h3 class="experience-title">Product Designer</h3>
-                                <p class="experience-company">Digital Studios</p>
+                                <h3 class="experience-title">WebAssembly Research Project</h3>
+                                <p class="experience-company">University of Dayton</p>
                             </div>
-                            <span class="experience-date">2020 - 2022</span>
+                            <span class="experience-date">May 2025 - August 2025</span>
                         </div>
                         <ul class="experience-description">
-                            <li>Designed and shipped 15+ features for mobile and web applications</li>
-                            <li>Collaborated with product managers to define product roadmaps</li>
-                            <li>Created interactive prototypes and conducted A/B testing</li>
-                            <li>Improved conversion rates by 32% through design optimization</li>
+                            <li>Researched WebAssembly and its security considerations</li>
+                            <li>Built and deployed a prototype</li>
+                            <li>Engaged in a mini course about research ethics</li>
                         </ul>
                         <div class="experience-tags">
-                            <span class="tag">Product Design</span>
-                            <span class="tag">Prototyping</span>
-                            <span class="tag">A/B Testing</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">WebAssembly</span>
+                            <span class="tag">HTML</span>
                         </div>
                     </div>
                 </article>
@@ -128,16 +157,15 @@
                     <div class="experience-content">
                         <div class="experience-header">
                             <div class="experience-title-group">
-                                <h3 class="experience-title">Junior Designer</h3>
-                                <p class="experience-company">Creative Agency Co.</p>
+                                <h3 class="experience-title">General Laborer</h3>
+                                <p class="experience-company">A & S Party Rental</p>
                             </div>
-                            <span class="experience-date">2018 - 2020</span>
+                            <span class="experience-date">May 2024 - August 2024</span>
                         </div>
                         <ul class="experience-description">
-                            <li>Supported senior designers on client projects across various industries</li>
-                            <li>Created marketing materials, brand guidelines, and digital assets</li>
-                            <li>Participated in client meetings and presented design concepts</li>
-                            <li>Managed multiple projects simultaneously under tight deadlines</li>
+                            <li>Cleaned tent tops and inflatables</li>
+                            <li>Set up tents and inflatables on location</li>
+                            <li>Staged and loaded box trucks</li>
                         </ul>
                         <div class="experience-tags">
                             <span class="tag">Brand Design</span>
@@ -178,5 +206,6 @@
     </main>
 
     <script src="css/animations.js"></script>
+    <script src="https://udayton-cloud.bitbucket.io/clock.js"></script>
 </body>
 </html>
